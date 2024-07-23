@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../Assets/Images/Logo-1.png'; 
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -14,9 +15,9 @@ const Nav = () => {
                 <img src={logo} alt="Logo" />
             </div>
             <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                <a href="home">Home</a>
-                <a href="store">Store</a>
-                <a href="contact">Contact</a>
+                <Link to="home">Home</Link>
+                <Link to="store">Store</Link>
+                <Link to="contact">Contact</Link>
             </div>
             <div className="hamburger" onClick={toggleMenu}>
                 <div className={`bar ${isMenuOpen ? 'toggle' : ''}`}></div>

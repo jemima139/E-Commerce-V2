@@ -12,7 +12,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("/api/products");
+        const response = await axios.get("sql5.freesqldatabase.com/api/products");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

@@ -123,8 +123,8 @@ const ProductList = () => {
         }
         .productItem {
           border: 1px solid #ddd;
-          padding: 10px;
-          margin: 10px;
+          padding: 5px;
+          margin: 5px;
           text-align: center;
           cursor: pointer;
           transition: transform 0.2s;
@@ -133,7 +133,7 @@ const ProductList = () => {
           transform: scale(1.05);
         }
         .productImage {
-          width: 200px;
+          width: 800px;
           height: auto;
           display: block;
           margin: 0 auto 10px auto;

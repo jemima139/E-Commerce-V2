@@ -24,7 +24,7 @@ const Nav = () => {
                 <div className={`bar ${isMenuOpen ? 'toggle' : ''}`}></div>
                 <div className={`bar ${isMenuOpen ? 'toggle' : ''}`}></div>
             </div>
-            <style jsx>{`
+            <style>{`
                 .navbar {
                     display: flex;
                     justify-content: space-between;

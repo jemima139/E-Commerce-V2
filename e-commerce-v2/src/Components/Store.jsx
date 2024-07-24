@@ -97,7 +97,7 @@ const ProductList = () => {
             onClick={() => setSelectedProduct(null)}
             className="closeButton"
           >
-            X
+            
           </button>
           <img
             src={selectedProduct.image_url}

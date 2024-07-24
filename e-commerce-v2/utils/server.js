@@ -2,9 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const app = express();
-const port = 3004;
-
-
+const port = 3008;
 
 app.use(cors()); 
 app.use(express.json());
@@ -19,7 +17,7 @@ const db = mysql.createConnection({
 db.connect(err => {
   if (err) {
     console.error('Database connection failed:', err.stack);
-    return;
+    process.exit(1); // Exit the process with failure
   }
   console.log('Connected to database');
 });
@@ -40,8 +38,9 @@ app.get('/', (req, res) => {
 app.get('/api/products', (req, res) => { 
   db.query('SELECT * FROM `Products`', (err, results) => { 
     if (err) {
-      console.error('Error executing query:', err);
-      return res.status(500).send(err);
+      console.error('Error executing query:', err.message);
+      console.error(err.stack); // Log the stack trace for more details
+      return res.status(500).json({ error: 'Internal Server Error', details: err.message });
     }
     res.json(results);
   });

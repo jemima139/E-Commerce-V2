@@ -82,6 +82,7 @@ const SubscribeSection = () => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
+                                            className="bordered-input"
                                         />
                                         {errors.name && <div className="error-message">{errors.name}</div>}
                                     </div>
@@ -96,6 +97,7 @@ const SubscribeSection = () => {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             required
+                                            className="bordered-input"
                                         />
                                         {errors.phone && <div className="error-message">{errors.phone}</div>}
                                     </div>
@@ -110,6 +112,7 @@ const SubscribeSection = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
+                                            className="bordered-input"
                                         />
                                         {errors.email && <div className="error-message">{errors.email}</div>}
                                     </div>
@@ -129,7 +132,7 @@ const SubscribeSection = () => {
                                         {errors.productType && <div className="error-message">{errors.productType}</div>}
                                     </div>
                                 </div>
-                                <label htmlFor="comment">Comment Section</label>
+                                <label htmlFor="comment">Comments</label>
                                 <textarea
                                     id="comment"
                                     rows="3"
@@ -137,7 +140,7 @@ const SubscribeSection = () => {
                                     value={formData.comment}
                                     onChange={handleChange}
                                 ></textarea>
-                                <button type="submit">SEND</button>
+                                <button type="submit">Submit</button>
                             </form>
                         </div>
                         <div className="contact-right">
@@ -253,14 +256,18 @@ const SubscribeSection = () => {
                     margin-bottom: 10px;
                 }
 
+                .bordered-input {
+                    border: 2px solid black;
+                }
+
                 label {
                     margin-bottom: 6px;
                     display: block;
                 }
 
                 button {
-                    background: transparent;
-                    border: 2px solid #333;
+                    background: #f0f0f0;
+                    border: 2px solid black;
                     color: #333;
                     border-radius: 4px;
                     padding: 10px 20px;

@@ -18,8 +18,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-
-
 const Home = () => {
   const [swiper, setSwiper] = useState(null);
 
@@ -135,9 +133,9 @@ const Home = () => {
         }
 
         .swiper-image {
-          width: 40%; /* Adjusted to make the images smaller */
+          width: 100%;
           height: auto;
-          margin: 0 auto; /* Center the images horizontally */
+          margin: 0 auto;
         }
 
         .swiper-button-next,
@@ -179,6 +177,64 @@ const Home = () => {
         .btn a {
           text-decoration: none;
           color: white;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+          .welcome-paragraph {
+            font-size: 14px;
+            margin-top: 50px;
+          }
+
+          .welcome-paragraph h3 {
+            font-size: 28px;
+          }
+
+          .swiper-container {
+            width: 100%;
+          }
+
+          .swiper-image {
+            width: 80%;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .welcome-paragraph {
+            font-size: 16px;
+            margin-top: 75px;
+          }
+
+          .welcome-paragraph h3 {
+            font-size: 32px;
+          }
+
+          .swiper-container {
+            width: 90%;
+          }
+
+          .swiper-image {
+            width: 60%;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .welcome-paragraph {
+            font-size: 18px;
+            margin-top: 100px;
+          }
+
+          .welcome-paragraph h3 {
+            font-size: 35px;
+          }
+
+          .swiper-container {
+            width: 80%;
+          }
+
+          .swiper-image {
+            width: 50%;
+          }
         }
       `}</style>
     </div>

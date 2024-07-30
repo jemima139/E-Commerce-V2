@@ -30,9 +30,9 @@ app.use((req, res, next) => {
 
 // Root route
 app.get('/', (req, res) => {
-  console.log('Root route accessed');
-  res.send('Welcome to the API');
-});
+    console.log('Root route accessed');
+    res.send('Welcome to the API');
+  });
 
 // API route to get data from the Products table
 app.get('/api/products', (req, res) => { 

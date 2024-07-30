@@ -81,12 +81,6 @@ const ProductList = () => {
             />
             <h2>{product.Title}</h2>
             <p>{product.Description}</p>
-            {/* <p>
-              Price: $
-              {product.Price !== undefined && product.Price !== null
-                ? product.Price.toFixed(2)
-                : 'N/A'}
-            </p> */}
             <p>{product.Price}</p>
           </div>
         ))}
@@ -97,7 +91,7 @@ const ProductList = () => {
             onClick={() => setSelectedProduct(null)}
             className="closeButton"
           >
-            
+            &times;
           </button>
           <img
             src={selectedProduct.image_url}
@@ -123,17 +117,19 @@ const ProductList = () => {
         }
         .productItem {
           border: 1px solid #ddd;
-          padding: 5px;
-          margin: 5px;
+          padding: 10px;
+          margin: 10px;
           text-align: center;
           cursor: pointer;
           transition: transform 0.2s;
+          flex: 1 1 calc(33.333% - 20px);
+          box-sizing: border-box;
         }
         .productItem:hover {
           transform: scale(1.05);
         }
         .productImage {
-          width: 800px;
+          width: 100%;
           height: auto;
           display: block;
           margin: 0 auto 10px auto;
@@ -148,8 +144,10 @@ const ProductList = () => {
           border: 1px solid #ddd;
           border-radius: 8px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          width: 400px;
+          width: 90%;
+          max-width: 500px;
           text-align: center;
+          z-index: 1000;
         }
         .productDetailImage {
           width: 100%;
@@ -169,6 +167,26 @@ const ProductList = () => {
           display: flex;
           justify-content: center;
           margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .productItem {
+            flex: 1 1 calc(50% - 20px);
+          }
+          .filterMenu {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .productItem {
+            flex: 1 1 100%;
+          }
+          .filterMenu {
+            flex-direction: column;
+            align-items: center;
+          }
         }
       `}</style>
     </div>

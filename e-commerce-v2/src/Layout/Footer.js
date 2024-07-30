@@ -1,4 +1,5 @@
 import React from 'react';
+import 'boxicons/css/boxicons.min.css';
 
 export default function Footer() {
   return (
@@ -30,6 +31,7 @@ export default function Footer() {
         </div>
       </footer>
       <style jsx>{`
+       
         .my-footer {
           margin-top: 150px;
           width: 100%;
@@ -101,7 +103,7 @@ export default function Footer() {
           border: 2px solid #494D5f;
           border-radius: 50%;
           font-size: 20px;
-          color: #white;
+          color: #fff;
           text-decoration: none;
           margin: 0 5px;
         }
@@ -159,6 +161,7 @@ export default function Footer() {
             margin: 8px;
           }
         }
+    
       `}</style>
     </div>
   );
